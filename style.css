@@ -2,6 +2,7 @@
     --primary-color: #FDF1FF;
     --secondary-color: #5F0081;
     --tertiary-color: #CB38FF;
+    --dark-color: #140018;
     --light-color: #fff;
     --blue-color: #002077;
     --green-color: #005414;
@@ -99,7 +100,7 @@ h1, h3 {
   }
 
   .dark-mode {
-    background: #140018 !important;
+    background: var(--dark-color) !important;
   }
 
   .dark-mode input, .dark-mode select {
@@ -111,7 +112,7 @@ h1, h3 {
     color: var(--primary-color);
   }
 
-  .dark-mode h1, .dark-mode input, .dark-mode select, .dark-mode .bi, .dark-mode p {
+  .dark-mode h1, .dark-mode h3, .dark-mode input, .dark-mode select, .dark-mode .bi, .dark-mode p, .dark-mode button, .dark-mode table {
     color: var(--primary-color) !important; 
   }
 
@@ -122,6 +123,10 @@ h1, h3 {
 
   .dark-mode option {
     background-color: var(--secondary-color);
+  }
+
+  .dark-mode .modal .modal-content {
+    background-color: var(--dark-color);
   }
 
 
@@ -213,6 +218,16 @@ h1, h3 {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.form .close-btn {
+    background: none;
+    border: none;
+    font-size: 30px;
+}
+
+.form .close-btn .bi {
+    color: var(--secondary-color);
 }
 
 /* MEDIA QUERY */
