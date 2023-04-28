@@ -152,6 +152,7 @@ h1, h3 {
 
     .form .pp img {
         width: 100px;
+        height: 100px;
     }
 
     .form .btn-profile, .form .btn-save, .form .btn-reset, .form label, 
