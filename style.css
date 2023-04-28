@@ -48,6 +48,83 @@ h1, h3 {
     100% { transform: rotate(360deg); }
 }
 
+
+/* DARK MODE */
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 58px;
+    height: 20px;
+    margin-top: 5px;
+    margin-left: 10px;
+    margin-right: 9px;
+  }
+
+  .switch input {
+    display: none;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #ccc;
+    border-radius: 34px;
+    transition: .4s;
+    margin-left: 10px;
+  }
+
+  .slider:before {
+    content: "";
+    position: absolute;
+    height: 13px;
+    width: 13px;
+    left: 4px;
+    bottom: 4px;
+    background: #fff;
+    border-radius: 50%;
+    transition: .4s;
+  }
+
+  input:checked + .slider {
+    background: var(--tertiary-color);
+  }
+
+  input:checked + .slider:before {
+    transform: translateX(26px);
+  }
+
+  .dark-mode {
+    background: #140018 !important;
+  }
+
+  .dark-mode input, .dark-mode select {
+    background-color: transparent;
+    border: 2px solid var(--secondary-color);
+  }
+
+  .dark-mode label {
+    color: var(--primary-color);
+  }
+
+  .dark-mode h1, .dark-mode input, .dark-mode select, .dark-mode .bi, .dark-mode p {
+    color: var(--primary-color) !important; 
+  }
+
+  .dark-mode input:focus {
+    color: var(--light-color) !important;
+    background-color: transparent;
+  }
+
+  .dark-mode option {
+    background-color: var(--secondary-color);
+  }
+
+
 /* FORM */
 .form .pp {
     display: flex;
