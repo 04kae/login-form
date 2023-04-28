@@ -114,50 +114,56 @@ function convertToAsterisk(text) {
 
 /* RETRIEVEING DATA FROM LOCAL STORAGE */
 
-    const form = document.querySelector('#myForm');
+const form = document.querySelector('#myForm');
 
-    const tableBody = document.querySelector('#myTable tbody');
+const tableBody = document.querySelector('#myTable tbody');
 
-    let data = JSON.parse(localStorage.getItem('myData')) || [];
+let data = JSON.parse(localStorage.getItem('myData')) || [];
 
-    form.addEventListener('submit', e => {
-        e.preventDefault();
+form.addEventListener('submit', e => {
+    e.preventDefault();
 
-        const name = form.elements['name'].value;
-        const number = form.elements['number'].value;
-        const address = form.elements['address'].value;
-        const email = form.elements['email'].value;
-        const username = form.elements['username'].value;
-        const password = form.elements['password'].value;
+    const name = form.elements['name'].value;
+    const number = form.elements['number'].value;
+    const address = form.elements['address'].value;
+    const email = form.elements['email'].value;
+    const username = form.elements['username'].value;
+    const password = form.elements['password'].value;
 
-        const newData = {
-            name: name,
-            number: number,
-            address: address,
-            email: email,
-            username: username,
-            password: password
-        };
+    const newData = {
+        name: name,
+        number: number,
+        address: address,
+        email: email,
+        username: username,
+        password: password
+    };
 
-        data.push(newData);
+    data.push(newData);
 
-        localStorage.setItem('myData', JSON.stringify(data));
+    localStorage.setItem('myData', JSON.stringify(data));
 
-        const row = tableBody.insertRow();
+    const row = tableBody.insertRow();
 
-        const namecell = row.insertCell();
-        const numbercell = row.insertCell();
-        const addresscell = row.insertCell();
-        const emailcell = row.insertCell();
-        const usernamecell = row.insertCell();
-        const passwordcell = row.insertCell();
+    const namecell = row.insertCell();
+    const numbercell = row.insertCell();
+    const addresscell = row.insertCell();
+    const emailcell = row.insertCell();
+    const usernamecell = row.insertCell();
+    const passwordcell = row.insertCell();
 
-        namecell.textContent = name;
-        numbercell.textContent = number;
-        addresscell.textContent = address;
-        emailcell.textContent = email;
-        usernamecell.textContent = username;
-        passwordcell.textContent = convertToAsterisk(password);
+    namecell.textContent = name;
+    numbercell.textContent = number;
+    addresscell.textContent = address;
+    emailcell.textContent = email;
+    usernamecell.textContent = username;
+    passwordcell.textContent = convertToAsterisk(password);
 
-        form.reset();
-    });
+    form.reset();
+});
+
+/* DARK MODE */
+function changeMode() {
+    var element = document.body;
+    element.classList.toggle("dark-mode");
+}
