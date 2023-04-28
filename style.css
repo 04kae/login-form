@@ -75,6 +75,7 @@ h1, h3 {
     right: 0;
     bottom: 0;
     background: url('images/sky.jpg');
+    border: 1px solid var(--light-color);
     background-size: cover;
     border-radius: 34px;
     transition: .4s;
