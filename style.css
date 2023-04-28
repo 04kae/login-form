@@ -3,6 +3,7 @@
     --secondary-color: #5F0081;
     --tertiary-color: #CB38FF;
     --dark-color: #140018;
+    --gray-color: #d6d6d6;
     --light-color: #fff;
     --blue-color: #002077;
     --green-color: #005414;
@@ -55,8 +56,8 @@ h1, h3 {
 .switch {
     position: relative;
     display: inline-block;
-    width: 58px;
-    height: 20px;
+    width: 60px;
+    height: 22px;
     margin-top: 5px;
     margin-left: 10px;
     margin-right: 9px;
@@ -73,7 +74,8 @@ h1, h3 {
     left: 0;
     right: 0;
     bottom: 0;
-    background: #ccc;
+    background: url('images/sky.jpg');
+    background-size: cover;
     border-radius: 34px;
     transition: .4s;
     margin-left: 10px;
@@ -82,21 +84,26 @@ h1, h3 {
   .slider:before {
     content: "";
     position: absolute;
-    height: 13px;
-    width: 13px;
+    height: 26px;
+    width: 26px;
     left: 4px;
     bottom: 4px;
-    background: #fff;
+    background: url('images/sun.png');
+    background-size: cover;
     border-radius: 50%;
     transition: .4s;
   }
 
   input:checked + .slider {
-    background: var(--tertiary-color);
+    background: url('images/stars.jpg');
+    background-size: cover;
+    border: 1px solid var(--light-color);
   }
 
   input:checked + .slider:before {
     transform: translateX(26px);
+    background: url('images/moon.png');
+    background-size: cover;
   }
 
   .dark-mode {
