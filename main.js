@@ -39,6 +39,16 @@ $(document).ready(function () {
     });
 });
 
+/* ACCEPTING 11 DIGITS (type="number") */
+const input = document.getElementById('number');
+input.addEventListener('input', (event) => {
+    const maxLength = 11;
+    const value = event.target.value;
+
+    if (value.length > maxLength) {
+        event.target.value = value.slice(0, maxLength);
+    }
+});
 
 /* HIDE AND SHOW PASSWORD */
 const togglePassword = document.querySelector('#toggle-password');
