@@ -104,6 +104,10 @@ h1, h3 {
     transform: translateX(26px);
     background: url('images/moon.png');
     background-size: cover;
+    height: 26px;
+    width: 26px;
+
+
   }
 
   .dark-mode {
