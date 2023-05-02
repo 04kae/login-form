@@ -85,8 +85,8 @@ h1, h3 {
   .slider:before {
     content: "";
     position: absolute;
-    height: 22px;
-    width: 24px;
+    height: 20px;
+    width: 22px;
     left: 0;
     bottom: 1px;
     background: url('images/sun.png');
@@ -105,9 +105,9 @@ h1, h3 {
     transform: translateX(40px);
     background: url('images/moon.png');
     background-size: cover;
-    height: 15px;
-    width: 15px;
-    margin-bottom: 2px;
+    height: 16px;
+    width: 16px;
+    margin-bottom: 1px;
   }
 
   .dark-mode {
@@ -161,6 +161,23 @@ h1, h3 {
 
 .form .pp input[type="file"] {
     display: none;
+}
+
+.form input[type="number"] {
+    padding-left: 46px;
+}
+
+.form #plus_sign {
+    position: absolute; 
+    z-index: 4; 
+    top: 25px; 
+    left: 10px; 
+    padding-right: 10px;
+    display: none;
+}
+
+.form select {
+    cursor: pointer;
 }
 
 .form p {
@@ -265,8 +282,16 @@ h1, h3 {
     }
 
     .form .btn-profile, .form .btn-save, .form .btn-reset, .form label, 
-    .form input, .form input::placeholder, .form select, .form a, .form p{
+    .form input, .form input::placeholder, .form .bi-plus, .form select, .form a, .form p{
         font-size: 12px;
+    }
+
+    .form input[type="number"] {
+        padding-left: 46px;
+    }
+
+    .form .bi-plus {
+        margin-top: 3px;
     }
 
     .form .split {
