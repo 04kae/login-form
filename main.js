@@ -39,21 +39,26 @@ $(document).ready(function () {
     });
 });
 
+
 /* ACCEPTING 11 DIGITS (type="number") */
 const input = document.getElementById('number');
 input.addEventListener('input', (event) => {
-    const maxLength = 11;
+    const maxLength = 10;
     const value = event.target.value;
-
     if (value.length > maxLength) {
         event.target.value = value.slice(0, maxLength);
     }
 });
 
+/* DISPLAYING +63 AT input[type="number"] */
+function phoneNumber() {
+    document.getElementById('plus_sign').style.display = "block";
+}
+
+
 /* HIDE AND SHOW PASSWORD */
 const togglePassword = document.querySelector('#toggle-password');
 const passwordField = document.querySelector('#password');
-
 togglePassword.addEventListener('click', function () {
     const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
     passwordField.setAttribute('type', type);
@@ -74,7 +79,7 @@ function generatePassword() {
 }
 
 /* GENERATING LIST USING ARRAY AND FOR LOOP */
-let addressArr = ["San Carlos City", "Escalante City", "Sagay City", "Cadiz City", "Bacolod City",];
+let addressArr = ["Bago City", "Cadiz City", "Sagay City", "Bacolod City", "Escalante City", "San Carlos City"];
 let select = document.getElementById("address");
 for (let i = 0; i < addressArr.length; i++) {
     var option = document.createElement("option");
@@ -90,20 +95,17 @@ function saveData() {
     let email = document.getElementById("email").value;
     let username = document.getElementById("username").value;
     let password = document.getElementById("password").value;
-
     localStorage.setItem("name", name);
     localStorage.setItem("number", number);
     localStorage.setItem("address", address);
     localStorage.setItem("email", email);
     localStorage.setItem("username", username);
     localStorage.setItem("password", password);
-
     if ((name === "") || (number === "") || (address === "-select-") ||
         (email === "") || (username === "") || (password === "")) {
         alert("You must complete filling up the form.")
     }
     else {
-
         alert("Your account has been created successfully." +
             "\n \n" + "Name: " + name + "\n" + "Phone Number: " +
             number + "\n" + "Address: " + address + "\n" +
@@ -123,23 +125,17 @@ function convertToAsterisk(text) {
 }
 
 /* RETRIEVEING DATA FROM LOCAL STORAGE */
-
 const form = document.querySelector('#myForm');
-
 const tableBody = document.querySelector('#myTable tbody');
-
 let data = JSON.parse(localStorage.getItem('myData')) || [];
-
 form.addEventListener('submit', e => {
     e.preventDefault();
-
     const name = form.elements['name'].value;
     const number = form.elements['number'].value;
     const address = form.elements['address'].value;
     const email = form.elements['email'].value;
     const username = form.elements['username'].value;
     const password = form.elements['password'].value;
-
     const newData = {
         name: name,
         number: number,
@@ -148,27 +144,21 @@ form.addEventListener('submit', e => {
         username: username,
         password: password
     };
-
     data.push(newData);
-
     localStorage.setItem('myData', JSON.stringify(data));
-
     const row = tableBody.insertRow();
-
     const namecell = row.insertCell();
     const numbercell = row.insertCell();
     const addresscell = row.insertCell();
     const emailcell = row.insertCell();
     const usernamecell = row.insertCell();
     const passwordcell = row.insertCell();
-
     namecell.textContent = name;
     numbercell.textContent = number;
     addresscell.textContent = address;
     emailcell.textContent = email;
     usernamecell.textContent = username;
     passwordcell.textContent = convertToAsterisk(password);
-
     form.reset();
 });
 
